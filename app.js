@@ -10,7 +10,7 @@ const flash = require('connect-flash')
 require('./config/passport')
 require('dotenv').config()
 const app = express()
-
+//
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
