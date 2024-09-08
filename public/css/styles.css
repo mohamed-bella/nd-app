@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap');
+
+body {
+     font-family: 'Inter', sans-serif;
+     background: #f1f1f1;
+}
+
+.navbar-logo {
+     width: 40px;
+     padding-right: 10px;
+}
+
+.navbar {
+     background-color: #ffffff52;
+     /* border-bottom: 2px solid #bfbfb9; */
+     box-shadow: 3px -2px 7px 0px gray;
+}
+
+.navbar-light .navbar-nav .nav-link {
+     text-decoration: underline;
+     color: #000;
+}
+
+.navbar-light .navbar-brand {
+     color: rgba(0, 0, 0, .9);
+     /* -webkit-text-stroke-width: medium; */
+}
+
+.brand-title {
+     background-color: #ffcd9a;
+     padding: 5px 13px;
+     border-radius: 50px;
+     color: #914901;
+     font-weight: 400;
+
+}
+
+.card {
+     background-color: #fff;
+     border-radius: 10px;
+     border: none;
+     position: relative;
+     margin-bottom: 30px;
+     /* box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1); */
+}
+
+.l-bg-cherry {
+     background: linear-gradient(to right, #493240, #f09) !important;
+     color: #fff;
+}
+
+.l-bg-blue-dark {
+     background: linear-gradient(to right, #373b44, #4286f4) !important;
+     color: #fff;
+}
+
+.l-bg-green-dark {
+     background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+     color: #fff;
+}
+
+.l-bg-orange-dark {
+     background: linear-gradient(to right, #a86008, #ffba56) !important;
+     color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas,
+.card .card-statistic-3 .card-icon-large .far,
+.card .card-statistic-3 .card-icon-large .fab,
+.card .card-statistic-3 .card-icon-large .fal {
+     font-size: 110px;
+}
+
+.card .card-statistic-3 .card-icon {
+     text-align: center;
+     line-height: 50px;
+     margin-left: 15px;
+     color: #000;
+     position: absolute;
+     right: -5px;
+     top: 20px;
+     opacity: 0.1;
+}
+
+.l-bg-cyan {
+     background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+     color: #fff;
+}
+
+.l-bg-green {
+     background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+     color: #fff;
+}
+
+.l-bg-orange {
+     background: linear-gradient(to right, #f9900e, #ffba56) !important;
+     color: #fff;
+}
+
+.l-bg-cyan {
+     background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+     color: #fff;
+}
+
+.jumbotron {
+     /* background-image: url('https://i.postimg.cc/bNkrcqsQ/Untitled-design-5.png') !important; */
+     background-color: #1a1a1a;
+     color: white;
+     box-shadow: inset -2px -20px 20px 20px #00000047;
+     background-image: url('https://res.cloudinary.com/dxg2nsnkj/image/upload/v1725668573/Untitled_design_6_rcn46g.png');
+}
+
+.button.google {
+     max-width: 320px;
+     display: flex;
+     padding: 0.5rem 1.4rem;
+     font-size: 0.875rem;
+     line-height: 1.25rem;
+     font-weight: 700;
+     text-align: center;
+     text-transform: uppercase;
+     vertical-align: middle;
+     align-items: center;
+     border-radius: 0.5rem;
+     border: 1px solid rgba(50, 50, 80, 0.25);
+     gap: 0.75rem;
+     color: #ffffff;
+     background-color: rgb(50, 50, 80);
+     cursor: pointer;
+     transition: all 0.6s ease;
+     text-decoration: none;
+}
+
+.button.google svg {
+     height: 24px;
+     width: 24px;
+     fill: #fff;
+     margin-right: 0.5rem;
+}
+
+.button.google:hover {
+     transform: scale(1.02);
+     background-color: rgb(90, 90, 120);
+     box-shadow: 0 2px 4px rgba(90, 90, 120, 0.1);
+}
+
+.button.google:focus {
+     outline: none;
+     box-shadow: 0 0 0 3px rgba(0, 0, 40, 0.3);
+}
+
+.button.google:active {
+     transform: scale(0.98);
+     opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+     .button.google {
+          max-width: 100%;
+     }
+}
+
+.star-rating {
+     /* direction: rtl; */
+     font-size: 2rem;
+     display: flex;
+     justify-content: flex-start;
+}
+
+.star-rating input[type="radio"] {
+     display: none;
+}
+
+.star-rating label {
+     color: #ddd;
+     cursor: pointer;
+     transition: color 0.2s;
+}
+
+.star-rating input[type="radio"]:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+     color: #ffc107;
+}
+
+.card {
+     width: 100%;
+     /* max-width: 24rem; */
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     overflow: hidden;
+}
+
+.card-header {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     padding: 1.5rem;
+}
+
+.avatar {
+     position: relative;
+     width: 96px;
+     height: 96px;
+}
+
+.avatar-image {
+     width: 100%;
+     height: 100%;
+     border-radius: 50%;
+     object-fit: cover;
+}
+
+.avatar-fallback {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #f0f0f0;
+     color: #000;
+     border-radius: 50%;
+     font-weight: bold;
+}
+
+.trainer-info {
+     display: flex;
+     flex-direction: column;
+}
+
+.trainer-name {
+     font-size: 1.5rem;
+     font-weight: bold;
+}
+
+.trainer-location {
+     display: flex;
+     align-items: center;
+     font-size: 0.875rem;
+     color: #6c757d;
+}
+
+.map-pin {
+     margin-right: 0.25rem;
+     width: 1rem;
+     height: 1rem;
+}
+
+.card-content {
+     padding: 1.5rem;
+}
+
+.rating {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+}
+
+.star {
+     width: 1.25rem;
+     height: 1.25rem;
+     fill: #ffc107;
+}
+
+.rating-score {
+     font-size: 0.875rem;
+     font-weight: 500;
+}
+
+.reviews {
+     font-size: 0.875rem;
+     color: #6c757d;
+}
+
+.badges {
+     display: flex;
+     gap: 0.5rem;
+     flex-wrap: wrap;
+}
+
+.badge {
+     background-color: #e9ecef;
+     padding: 0.25rem 0.5rem;
+     border-radius: 0.25rem;
+     font-size: 0.75rem;
+     font-weight: 500;
+}
+
+.description {
+     font-size: 0.875rem;
+     color: #6c757d;
+     margin-top: 0.5rem;
+}
+
+.fa,
+.fas {
+     color: #a86008
+}
+
+.titles {
+     font-family: 'Pridi', monospace;
+}

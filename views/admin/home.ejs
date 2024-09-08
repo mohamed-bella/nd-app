@@ -1,0 +1,105 @@
+<%- include('./partials/head.ejs') %>
+     <%- include('./partials/head.ejs') %>
+          <%- include('./partials/sidebar.ejs') %>
+
+
+
+               <section class="dashboard">
+
+                    <%- include('./partials/navbar.ejs') %>
+
+                         <div class="dash-content">
+                              <div class="overview">
+                                   <div class="title">
+                                        <i class="uil uil-tachometer-fast-alt"></i>
+                                        <span class="text">Dashboard</span>
+                                   </div>
+                                   <div class="boxes">
+                                        <div class="box box1">
+                                             <i class="uil uil-user"></i>
+
+                                             <span class="text">New Trainers</span>
+                                             <span class="number">
+                                                  <%= newUsers %>
+                                             </span>
+                                        </div>
+                                        <div class="box box2">
+                                             <i class="uil uil-comments"></i>
+                                             <span class="text">recent Reviews</span>
+                                             <span class="number">
+                                                  <%= recentReviews.length %>
+                                             </span>
+                                        </div>
+                                        <div class="box box3">
+                                             <i class="uil uil-share"></i>
+                                             <span class="text">pending Trainers</span>
+                                             <span class="number">
+                                                  <%= pendingTrainers %>
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="activity">
+                                   <div class="title">
+                                        <i class="uil uil-clock-three"></i>
+                                        <span class="text">Pending Trainers</span>
+                                   </div>
+                                   <div class="activity-data">
+                                        <div class="data names">
+                                             <span class="data-title">Name</span>
+                                             <% pendingTrainersList.forEach(function(trainer) { %>
+
+                                                  <span class="data-list">
+                                                       <%= trainer.displayName %>
+                                                  </span>
+
+                                                  </li>
+                                                  <% }) %>
+
+
+                                        </div>
+                                        <div class="data email">
+                                             <span class="data-title">Email</span>
+                                             <span class="data-list"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0a0a2b5bda3b8b1b8b990b7bdb1b9bcfeb3bfbd">[email&#160;protected]</a></span>
+                                             <span class="data-list"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="761213130617151e17181236111b171f1a5815191b">[email&#160;protected]</a></span>
+                                             <span class="data-list"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1d1d3c0cac0d2c9c9c0c8e1c6ccc0c8cd8fc2cecc">[email&#160;protected]</a></span>
+                                             <span class="data-list"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f323e31362c373e3c373e313b1f38323e3633713c3032">[email&#160;protected]</a></span>
+                                             <span class="data-list"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bececcdfcad7d3dfcdd6d6dfd7fed9d3dfd7d290ddd1d3">[email&#160;protected]</a></span>
+                                             <span class="data-list"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0ddd1dec3d8d1d8d9f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</a></span>
+                                             <span class="data-list"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="93f4f2fdf6e0fbf0fbf2fdf7d3f4fef2faffbdf0fcfe">[email&#160;protected]</a></span>
+                                        </div>
+                                        <div class="data joined">
+                                             <span class="data-title">Joined</span>
+                                             <span class="data-list">2022-02-12</span>
+                                             <span class="data-list">2022-02-12</span>
+                                             <span class="data-list">2022-02-13</span>
+                                             <span class="data-list">2022-02-13</span>
+                                             <span class="data-list">2022-02-14</span>
+                                             <span class="data-list">2022-02-14</span>
+                                             <span class="data-list">2022-02-15</span>
+                                        </div>
+                                        <div class="data type">
+                                             <span class="data-title">Type</span>
+                                             <span class="data-list">New</span>
+                                             <span class="data-list">Member</span>
+                                             <span class="data-list">Member</span>
+                                             <span class="data-list">New</span>
+                                             <span class="data-list">Member</span>
+                                             <span class="data-list">New</span>
+                                             <span class="data-list">Member</span>
+                                        </div>
+                                        <div class="data status">
+                                             <span class="data-title">Status</span>
+                                             <span class="data-list">Liked</span>
+                                             <span class="data-list">Liked</span>
+                                             <span class="data-list">Liked</span>
+                                             <span class="data-list">Liked</span>
+                                             <span class="data-list">Liked</span>
+                                             <span class="data-list">Liked</span>
+                                             <span class="data-list">Liked</span>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+               </section>
+               <%- include('./partials/footer.ejs') %>

@@ -1,0 +1,165 @@
+<%- include('./partials/head.ejs') %>
+     <style>
+          /* styles.css */
+          body {
+               font-family: Arial, sans-serif;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100vh;
+               margin: 0;
+               background-color: #4CAF50;
+               background-image: url('https://res.cloudinary.com/dxg2nsnkj/image/upload/v1725668573/Untitled_design_6_rcn46g.png');
+          }
+
+          .onboarding-container {
+               width: 100%;
+               max-width: 600px;
+               padding: 20px;
+               border: 1px solid #ddd;
+               border-radius: 8px;
+               background: #fff;
+          }
+
+          .progress-bar {
+               width: 100%;
+               background: #f3f3f3;
+               border-radius: 4px;
+               height: 20px;
+               margin-bottom: 20px;
+               position: relative;
+          }
+
+          .progress {
+               height: 100%;
+               background: #4caf50;
+               width: 0%;
+               border-radius: 4px;
+          }
+
+          .form-step {
+               display: none;
+          }
+
+          .form-step label {
+               display: block;
+               margin-top: 10px;
+          }
+
+          .form-step input,
+          .form-step textarea {
+               width: 100%;
+               padding: 8px;
+               margin-top: 5px;
+               border: 1px solid #ccc;
+               border-radius: 4px;
+          }
+
+          .form-buttons {
+               margin-top: 20px;
+               text-align: right;
+          }
+
+          .form-buttons button {
+               padding: 10px 20px;
+               border: none;
+               border-radius: 4px;
+               cursor: pointer;
+          }
+
+
+
+
+
+          #submit-btn {
+               display: none;
+               /* Hide submit button initially */
+          }
+     </style>
+     <div class="onboarding-container">
+          <div class="progress-bar">
+               <div class="progress" id="progress"></div>
+          </div>
+          <form id="onboarding-form" method="post" action="/onboarding">
+               <div class="form-step" id="step-1">
+                    <h2>Step 1: Location and Bio</h2>
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" class="form-control" required>
+                    <label for="bio">Bio:</label>
+                    <textarea class="form-control" id="bio" name="bio" rows="4" required></textarea>
+               </div>
+               <div class="form-step" id="step-2">
+                    <h2>Step 2: Experience and Specializations</h2>
+                    <label for="experience">Years of Experience:</label>
+                    <input class="form-control" type="number" id="experience" name="experience" min="0" required>
+                    <label for="specialization">Specializations (comma-separated):</label>
+                    <input type="text" id="specialization" name="specialization" placeholder="e.g., Fitness, Nutrition">
+               </div>
+               <div class="form-step" id="step-3">
+                    <h2>Step 3: Certifications and Training Methods</h2>
+                    <label for="certifications">Certifications (comma-separated):</label>
+                    <input class="form-control" type="text" id="certifications" name="certifications" placeholder="e.g., Certification A, Certification B">
+                    <label for="trainingMethods">Training Methods:</label>
+                    <textarea id="trainingMethods" name="trainingMethods" rows="4"></textarea>
+               </div>
+               <div class="form-step" id="step-4">
+                    <h2>Step 4: Services Offered</h2>
+                    <label for="programs">Training Programs (comma-separated):</label>
+                    <input class="form-control" type="text" id="programs" name="programs" placeholder="e.g., Program A, Program B">
+                    <label for="pricing">Pricing Structure:</label>
+                    <input class="form-control" type="text" id="pricing" name="pricing">
+                    <label for="availability">Availability:</label>
+                    <input class="form-control" type="text" id="availability" name="availability">
+               </div>
+               <div class="form-buttons">
+                    <button class="btn btn-secondary" type="button" id="prev-btn" onclick="prevStep()">Previous</button>
+                    <button class="btn btn-success" type="button" id="next-btn" onclick="nextStep()">Next</button>
+                    <button class="btn btn-success" type="submit" id="submit-btn">Submit</button>
+               </div>
+          </form>
+     </div>
+
+     <script>
+          // script.js
+          let currentStep = 0;
+
+          const steps = document.querySelectorAll('.form-step');
+          const progress = document.getElementById('progress');
+          const totalSteps = steps.length;
+
+          document.getElementById('submit-btn').style.display = 'none'; // Hide submit button initially
+
+          function showStep(step) {
+               steps.forEach((el, index) => {
+                    el.style.display = index === step ? 'block' : 'none';
+               });
+               updateProgress();
+               document.getElementById('prev-btn').style.display = step === 0 ? 'none' : 'inline-block';
+               document.getElementById('next-btn').style.display = step === totalSteps - 1 ? 'none' : 'inline-block';
+               document.getElementById('submit-btn').style.display = step === totalSteps - 1 ? 'inline-block' : 'none';
+          }
+
+          function updateProgress() {
+               const percent = ((currentStep + 1) / totalSteps) * 100;
+               progress.style.width = percent + '%';
+          }
+
+          function nextStep() {
+               if (currentStep < totalSteps - 1) {
+                    currentStep++;
+                    showStep(currentStep);
+               }
+          }
+
+          function prevStep() {
+               if (currentStep > 0) {
+                    currentStep--;
+                    showStep(currentStep);
+               }
+          }
+
+          // Initialize the form
+          showStep(currentStep);
+
+     </script>
+     <%- include('../partials/footer.ejs') %>
